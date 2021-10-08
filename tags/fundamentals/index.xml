@@ -1,3 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>fundamentals on t0rsten.github.io</title><link>https://t0rsten.github.io/tags/fundamentals/</link><description>Recent content in fundamentals on t0rsten.github.io</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>CC BY-ND 4.0</copyright><lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://t0rsten.github.io/tags/fundamentals/index.xml" rel="self" type="application/rss+xml"/><item><title>Powershell Array Fundamentals</title><link>https://t0rsten.github.io/posts/2021/03/powershell-array-fundamentals/</link><pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/03/powershell-array-fundamentals/</guid><description>Arrays are a fundamental feature. Arrays make it possible to ingest, manipulate and output true data structures (and not just raw strings).
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fundamentals on t0rsten.github.io</title>
+    <link>https://t0rsten.github.io/tags/fundamentals/</link>
+    <description>Recent content in fundamentals on t0rsten.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>CC BY-ND 4.0</copyright>
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://t0rsten.github.io/tags/fundamentals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell Array Fundamentals</title>
+      <link>https://t0rsten.github.io/posts/2021/03/powershell-array-fundamentals/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://t0rsten.github.io/posts/2021/03/powershell-array-fundamentals/</guid>
+      <description>Arrays are a fundamental feature. Arrays make it possible to ingest, manipulate and output true data structures (and not just raw strings).
 Arrays can contain one or more elements. An element can be a string, an integer, an object, or even another array, and one array can contain any combination of these elements.
-Create an Array # create an empty array $cities = @() # create an array with items $cities = @(&amp;#39;Toronto&amp;#39;,&amp;#39;Ottawa&amp;#39;,&amp;#39;Vancouver&amp;#39;,&amp;#39;Edmonton&amp;#39;,&amp;#39;Winnipeg&amp;#39;) An array has a length propertie which we can use to get the number of elements in the array</description></item></channel></rss>
+Create an Array # create an empty array $cities = @() # create an array with items $cities = @(&amp;#39;Toronto&amp;#39;,&amp;#39;Ottawa&amp;#39;,&amp;#39;Vancouver&amp;#39;,&amp;#39;Edmonton&amp;#39;,&amp;#39;Winnipeg&amp;#39;) An array has a length propertie which we can use to get the number of elements in the array</description>
+    </item>
+    
+  </channel>
+</rss>
