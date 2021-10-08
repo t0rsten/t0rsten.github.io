@@ -1,9 +1,157 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on t0rsten.github.io</title><link>https://t0rsten.github.io/posts/</link><description>Recent content in Posts on t0rsten.github.io</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>CC BY-ND 4.0</copyright><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://t0rsten.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>[PS Snippet] Adding leading zero</title><link>https://t0rsten.github.io/posts/2021/03/ps-snippet-adding-leading-zero/</link><pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/03/ps-snippet-adding-leading-zero/</guid><description>Adding leading zero with -f operator.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on t0rsten.github.io</title><link>https://t0rsten.github.io/posts/</link><description>Recent content in Posts on t0rsten.github.io</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>CC BY-ND 4.0</copyright><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://t0rsten.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>[PS Snippet] Get OS Version</title><link>https://t0rsten.github.io/posts/2021/04/ps-snippet-get-os-version/</link><pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/04/ps-snippet-get-os-version/</guid><description>Fast way to get the Operating System Version
+[Environment]::OSVersion #Output Platform ServicePack Version VersionString -------- ----------- ------- ------------- Win32NT 10.0.18363.0 Microsoft Windows NT 10.0.18363.0</description><content type="html"><![CDATA[<p>Fast way to get the Operating System Version</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">[Environment]</span>::OSVersion
+
+<span style="color:#75715e">#Output</span>
+Platform ServicePack Version      VersionString
+-------- ----------- -------      -------------
+ Win32NT             10.0.18363.0 Microsoft Windows NT 10.0.18363.0
+</code></pre></div>]]></content></item><item><title>[PS Snippet] Adding leading zero</title><link>https://t0rsten.github.io/posts/2021/03/ps-snippet-adding-leading-zero/</link><pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/03/ps-snippet-adding-leading-zero/</guid><description>Adding leading zero with -f operator.
 2..20 | foreach {&amp;#39;Folder_{0:D2}&amp;#39; -f $_}</description><content type="html"><![CDATA[<p>Adding leading zero with <code>-f</code> operator.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">2..20 | <span style="color:#66d9ef">foreach</span> {<span style="color:#e6db74">&#39;Folder_{0:D2}&#39;</span> <span style="color:#f92672">-f</span> $_}
 </code></pre></div>]]></content></item><item><title>[PS Snippet] Find Last Reboot</title><link>https://t0rsten.github.io/posts/2021/03/ps-snippet-find-last-reboot/</link><pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/03/ps-snippet-find-last-reboot/</guid><description>Find the last reboot.
 Get-EventLog -LogName System -ComputerName $Env:COMPUTERNAME | Where-Object { $_.eventid -eq &amp;#39;1074&amp;#39; } | sort -Descending -Property timegenerated | Select-Object -First 1 -Property MachineName, Username, timegenerate</description><content type="html"><![CDATA[<p>Find the last reboot.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Get-EventLog -LogName System -ComputerName $Env:COMPUTERNAME | Where-Object { $_.eventid <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#39;1074&#39;</span> } | sort -Descending -Property timegenerated | Select-Object -First 1 -Property MachineName, Username, timegenerate
+</code></pre></div>]]></content></item><item><title>Powershell Array Fundamentals</title><link>https://t0rsten.github.io/posts/2021/03/powershell-array-fundamentals/</link><pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/03/powershell-array-fundamentals/</guid><description>Arrays are a fundamental feature. Arrays make it possible to ingest, manipulate and output true data structures (and not just raw strings).
+Arrays can contain one or more elements. An element can be a string, an integer, an object, or even another array, and one array can contain any combination of these elements.
+Create an Array # create an empty array $cities = @() # create an array with items $cities = @(&amp;#39;Toronto&amp;#39;,&amp;#39;Ottawa&amp;#39;,&amp;#39;Vancouver&amp;#39;,&amp;#39;Edmonton&amp;#39;,&amp;#39;Winnipeg&amp;#39;) An array has a length propertie which we can use to get the number of elements in the array</description><content type="html"><![CDATA[<p>Arrays are a fundamental feature. Arrays make it possible to ingest, manipulate and output true data structures (and not just raw strings).</p>
+<p>Arrays can contain one or more elements. An element can be a string, an integer, an object, or even another array, and one array can contain any combination of these elements.</p>
+<h2 id="create-an-array">Create an Array</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># create an empty array</span>
+$cities = @()
+
+<span style="color:#75715e"># create an array with items</span>
+$cities = @(<span style="color:#e6db74">&#39;Toronto&#39;</span>,<span style="color:#e6db74">&#39;Ottawa&#39;</span>,<span style="color:#e6db74">&#39;Vancouver&#39;</span>,<span style="color:#e6db74">&#39;Edmonton&#39;</span>,<span style="color:#e6db74">&#39;Winnipeg&#39;</span>)
+</code></pre></div><p>An array has a length propertie which we can use to get the number of elements in the array</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># get number of items</span>
+$cities.Lenth
+
+<span style="color:#75715e"># Output</span>
+5
+</code></pre></div><h2 id="accessing-items">Accessing Items</h2>
+<p>There are several ways to access items of an array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># return all items</span>
+$cities
+
+<span style="color:#75715e"># Output</span>
+Toronto
+Ottawa
+Vancouver
+Edmonton
+Winnipeg
+</code></pre></div><p>An array has a position index that refers to the elements.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># return item on position 2</span>
+$cities[1]
+
+<span style="color:#75715e"># Output</span>
+Ottawa
+
+<span style="color:#75715e"># return multiple items</span>
+$cities[0,2,4]
+
+<span style="color:#75715e"># Output</span>
+Toronto
+Vancouver
+Winnipeg
+
+<span style="color:#75715e"># return the last item in the array. The negative number tells to count backward.</span>
+$cities[-2]
+
+<span style="color:#75715e"># Output</span>
+Edmonton
+</code></pre></div><h2 id="accessing-items---iteration">Accessing Items - Iteration</h2>
+<p>Another usful way to access items is looping through the array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># return all items</span>
+$cities | Foreach-Object { $_ }
+
+<span style="color:#75715e"># Output</span>
+Toronto
+Ottawa
+Vancouver
+Edmonton
+Winnipeg
+
+<span style="color:#75715e"># another way to return all items</span>
+<span style="color:#66d9ef">foreach</span> ($city <span style="color:#66d9ef">in</span> $cities)
+{
+  Write-Output $city
+}
+
+<span style="color:#75715e"># Output</span>
+Toronto
+Ottawa
+Vancouver
+Edmonton
+Winnipeg
+</code></pre></div><h2 id="add-or-remove-items">Add or Remove Items</h2>
+<p>Add or Remove Items of an array should be simple, but it isn&rsquo;t. The default type, an object array <code>(System.Object[])</code>, has a fixed size. It&rsquo;s easy to change objects, but you can&rsquo;t add or remove them.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># create an array with items</span>
+$cities = @(<span style="color:#e6db74">&#39;Toronto&#39;</span>,<span style="color:#e6db74">&#39;Ottawa&#39;</span>,<span style="color:#e6db74">&#39;Vancouver&#39;</span>,<span style="color:#e6db74">&#39;Edmonton&#39;</span>,<span style="color:#e6db74">&#39;Winnipeg&#39;</span>)
+
+$cities.IsFixedSize
+
+<span style="color:#75715e"># Output</span>
+True
+</code></pre></div><p>Add or Remove will faild</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">
+$cities.Add(<span style="color:#e6db74">&#39;Elmira&#39;</span>)
+
+Exception calling <span style="color:#e6db74">&#34;Add&#34;</span> with <span style="color:#e6db74">&#34;1&#34;</span> argument(s)<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Collection was of a fixed size.&#34;</span>
+At line<span style="color:#960050;background-color:#1e0010">:</span>1 char<span style="color:#960050;background-color:#1e0010">:</span>1
++ $cities.Add(<span style="color:#e6db74">&#39;Elmira&#39;</span>)
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          <span style="color:#960050;background-color:#1e0010">:</span> NotSpecified<span style="color:#960050;background-color:#1e0010">:</span> (<span style="color:#960050;background-color:#1e0010">:</span>) [], MethodInvocationException
+    + FullyQualifiedErrorId <span style="color:#960050;background-color:#1e0010">:</span> NotSupportedException
+
+$cities.Remove(<span style="color:#e6db74">&#39;Ottawa&#39;</span>)
+
+Exception calling <span style="color:#e6db74">&#34;Remove&#34;</span> with <span style="color:#e6db74">&#34;1&#34;</span> argument(s)<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Collection was of a fixed size.&#34;</span>
+At line<span style="color:#960050;background-color:#1e0010">:</span>1 char<span style="color:#960050;background-color:#1e0010">:</span>1
++ $cities.Remove(<span style="color:#e6db74">&#39;Ottawa&#39;</span>)
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          <span style="color:#960050;background-color:#1e0010">:</span> NotSpecified<span style="color:#960050;background-color:#1e0010">:</span> (<span style="color:#960050;background-color:#1e0010">:</span>) [], MethodInvocationException
+    + FullyQualifiedErrorId <span style="color:#960050;background-color:#1e0010">:</span> NotSupportedException
+</code></pre></div><p>The common solution to add Items to an array is the <code>+=</code> operator.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Add a Item</span>
+$cities += <span style="color:#e6db74">&#39;Elmira&#39;</span>
+
+<span style="color:#75715e"># Output</span>
+$cities
+
+Toronto
+Ottawa
+Vancouver
+Edmonton
+Winnipeg
+Elmira
+</code></pre></div><p>The similar solution to remove Items from a array should be the <code>-=</code> operator. Far from it!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$cities -= <span style="color:#e6db74">&#39;Elmira&#39;</span>
+Method invocation failed because <span style="color:#66d9ef">[System.Object[]]</span> does not contain a method named <span style="color:#e6db74">&#39;op_Subtraction&#39;</span>.
+At line<span style="color:#960050;background-color:#1e0010">:</span>1 char<span style="color:#960050;background-color:#1e0010">:</span>1
++ $cities -= <span style="color:#e6db74">&#39;Elmira&#39;</span>
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          <span style="color:#960050;background-color:#1e0010">:</span> InvalidOperation<span style="color:#960050;background-color:#1e0010">:</span> (op_Subtraction<span style="color:#960050;background-color:#1e0010">:</span>String) [], RuntimeException
+    + FullyQualifiedErrorId <span style="color:#960050;background-color:#1e0010">:</span> MethodNotFound
+</code></pre></div><p>Now i will show some solution that works. One way to remove an object is to create a new array that includes only selected objects from the original array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$cities = $cities | Where-Object { $_ <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#39;Elmira&#39;</span> }
+
+<span style="color:#75715e"># Output</span>
+$cities
+
+Toronto
+Ottawa
+Vancouver
+Edmonton
+Winnipeg
+</code></pre></div><p>You can also use the index notation to exclued objects.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$cities = $cities[0,1,3]
+
+<span style="color:#75715e"># Output</span>
+$cities
+
+Toronto
+Ottawa
+Edmonton
 </code></pre></div>]]></content></item><item><title>[PS Snippet] Remove Leading Null From IP Address</title><link>https://t0rsten.github.io/posts/2021/03/ps-snippet-remove-leading-null-from-ip-address/</link><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate><guid>https://t0rsten.github.io/posts/2021/03/ps-snippet-remove-leading-null-from-ip-address/</guid><description># Solution 1 &amp;#39;172.010.024.101&amp;#39; -replace &amp;#39;\b0+\B&amp;#39; # Solution 2 [System.Net.IPAddress]$ip = &amp;#39;172.010.024.101&amp;#39; $ip.IPAddressToString</description><content type="html"><![CDATA[<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Solution 1</span>
 <span style="color:#e6db74">&#39;172.010.024.101&#39;</span> <span style="color:#f92672">-replace</span> <span style="color:#e6db74">&#39;\b0+\B&#39;</span>
 
