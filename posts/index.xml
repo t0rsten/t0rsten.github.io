@@ -9,7 +9,7 @@ PS C:\Users\t0rsten&gt; New-Item -Name <span style="color:#e6db74">&#39;.gitconf
 </code></pre></div><p>At the corresponding files we insert name and email adresse like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>user<span style="color:#f92672">]</span>
     name <span style="color:#f92672">=</span> jane
-    email <span style="color:#f92672">=</span> jane@exampl.com
+    email <span style="color:#f92672">=</span> jane@example.com
 </code></pre></div><p>At the <code>.gifconfig</code>, were is located at the user directory, now remove the existing <code>[user]</code> configuration and add the conditional configuration. The <code>includeIf</code> conditional configuration set these settings by loading configurations from the files.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>includeIf <span style="color:#e6db74">&#34;gitdir/i:C:/Dev/AzRepos/&#34;</span><span style="color:#f92672">]</span>
 	path <span style="color:#f92672">=</span> .gitconfig-azure
